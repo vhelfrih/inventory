@@ -172,7 +172,10 @@ const EnhancedTableToolbar = (props) => {
 
       {numSelected > 0 ? (
         <Tooltip title="Delete">
-          <IconButton onClick={onRemoveItem.bind(this, selected)}>
+          <IconButton onClick={onRemoveItem.bind(null, selected)}>
+          {/* <IconButton onClick={this.onRemoveItem.bind(this, selected)}> */}
+          {/* <button onClick={(e) => this.deleteRow(id, e)}>Sor törlése</button>
+<button onClick={this.deleteRow.bind(this, id)}>Sor törlése</button> */}
             <DeleteIcon />
           </IconButton>
         </Tooltip>
@@ -199,7 +202,6 @@ export default function EnhancedTable({ rows, onRemoveItem }) {
     if (event.target.checked) {
       const newSelecteds = rows.map((n) => n.id);
       setSelected(newSelecteds);
-      console.log(newSelecteds);
       return;
     }
     setSelected([]);
@@ -246,7 +248,7 @@ export default function EnhancedTable({ rows, onRemoveItem }) {
 
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>
-      <Paper sx={{ width: "90%"}}>
+      <Paper sx={{ width: "85%", margin: "8px auto"}}>
         <EnhancedTableToolbar
           numSelected={selected.length}
           onRemoveItem={onRemoveItem}
@@ -332,11 +334,11 @@ export default function EnhancedTable({ rows, onRemoveItem }) {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
-      </Paper>
       <FormControlLabel
         control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding" style={{marginLeft: "12px"}}
+        label="Dense padding" style={{margin: "8px"}}
       />
+      </Paper>
     </Box>
   );
 }

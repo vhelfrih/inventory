@@ -52,10 +52,6 @@ const App = (props) => {
       });
   }, []);
 
-  // const filteredIngredientsHandler = useCallback((filteredIngredients) => {
-  //   setRows(filteredIngredients);
-  // }, []);
-
   const addItemHandler = (item) => {
     setIsLoading(true);
     fetch(
