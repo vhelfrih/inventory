@@ -65,7 +65,6 @@ const Login = ({ history }) => {
           <Grid item sm={4}>
             <CustomizedTextfield
               label="Email"
-              id="outlined-size-small"
               placeholder="Email"
               size="small"
               name="email"
@@ -78,7 +77,6 @@ const Login = ({ history }) => {
           <Grid item sm={4}>
             <CustomizedTextfield
               label="Password"
-              id="outlined-size-small"
               placeholder="Password"
               size="small"
               name="password"
