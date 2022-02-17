@@ -20,7 +20,7 @@ export default function AddItems(props) {
     event.preventDefault();
     props.onAddItem({
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       place: enteredPlace,
       date: enteredDate,
       category: enteredCategory,
@@ -40,6 +40,8 @@ export default function AddItems(props) {
         justifyContent="center"
         flexWrap="wrap"
         spacing={2}
+        maxWidth="650px"
+        margin="6px auto"
         >
         <Grid item xs={3} sm={4} >
           <TextField
@@ -47,6 +49,7 @@ export default function AddItems(props) {
             id="outlined-size-small"
             placeholder="Name"
             size="small"
+            autoComplete="off"
             value={enteredTitle}
             onChange={(e) => {
               setEnteredTitle(e.target.value);
@@ -60,6 +63,7 @@ export default function AddItems(props) {
             id="outlined-size-small"
             placeholder="Amount"
             size="small"
+            autoComplete="off"
             value={enteredAmount}
             onChange={(e) => {
               setEnteredAmount(e.target.value);
@@ -149,11 +153,9 @@ export default function AddItems(props) {
           </FormControl>
         </Grid>
         <Grid container justifyContent="center" spacing={3} my="10px">
-          {/* <Grid item > */}
           <Button type="submit" style={{ width: "20%", height: "40px" }}>
             Add Item
           </Button>
-          {/* </Grid> */}
         </Grid>
       </Grid>
     </form>
