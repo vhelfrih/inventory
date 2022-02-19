@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useState, useEffect } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
@@ -67,7 +66,6 @@ const Home = (props) => {
       })
       .then((responseData) => {
         setRows((prevItems) => [...prevItems, { id: item.id, ...item }]);
-        // setRows((prevItems) => [...prevItems, { id: Math.random(), ...item }]);
       });
   };
 
@@ -85,41 +83,41 @@ const Home = (props) => {
   };
 
   return (
-    <Container>
+    <Container sx={{ padding: "0" }}>
       <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <ButtonAppBar />
-          <div>
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-              spacing={2}
-              overflow="hidden"
-              my="10px"
-            >
-              <Grid item>
-                <WbSunnyTwoToneIcon
-                  style={darkMode ? { color: "yellow" } : { color: "salmon" }}
-                />
-              </Grid>
-              <Grid item>
-                <Switch
-                  checked={darkMode}
-                  onChange={() => setDarkMode(!darkMode)}
-                />
-              </Grid>
-              <Grid item>
-                <Brightness2TwoToneIcon
-                  style={darkMode ? { color: "salmon" } : { color: "yellow" }}
-                />
-              </Grid>
+        <CssBaseline />
+        <ButtonAppBar />
+        <>
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            spacing={2}
+            overflow="hidden"
+            my="10px"
+          >
+            <Grid item>
+              <WbSunnyTwoToneIcon
+                style={darkMode ? { color: "yellow" } : { color: "salmon" }}
+              />
             </Grid>
-            <AddItems onAddItem={addItemHandler} loading={isLoading} />
-            <Grid item justifyContent="center" alignItems="center">
-              <EnhancedTable rows={rows} onRemoveItem={removeItemHandler} />
+            <Grid item>
+              <Switch
+                checked={darkMode}
+                onChange={() => setDarkMode(!darkMode)}
+              />
             </Grid>
-          </div>
+            <Grid item>
+              <Brightness2TwoToneIcon
+                style={darkMode ? { color: "salmon" } : { color: "yellow" }}
+              />
+            </Grid>
+          </Grid>
+          <AddItems onAddItem={addItemHandler} loading={isLoading} />
+          <Grid item justifyContent="center" alignItems="center">
+            <EnhancedTable rows={rows} onRemoveItem={removeItemHandler} />
+          </Grid>
+        </>
       </ThemeProvider>
     </Container>
   );

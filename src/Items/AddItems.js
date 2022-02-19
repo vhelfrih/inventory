@@ -39,45 +39,49 @@ export default function AddItems(props) {
         alignItems="center"
         justifyContent="center"
         flexWrap="wrap"
-        spacing={2}
+        spacing={3}
         maxWidth="650px"
         margin="6px auto"
-        >
-        <Grid item xs={3} sm={4} >
-          <TextField
-            label="Name"
-            id="outlined-size-small"
-            placeholder="Name"
-            size="small"
-            autoComplete="off"
-            value={enteredTitle}
-            onChange={(e) => {
-              setEnteredTitle(e.target.value);
-            }}
-          />
+      >
+        <Grid item>
+          <FormControl xs={12}>
+            <TextField
+              label="Name"
+              id="outlined-size-small"
+              placeholder="Name"
+              size="small"
+              autoComplete="off"
+              value={enteredTitle}
+              onChange={(e) => {
+                setEnteredTitle(e.target.value);
+              }}
+            />
+          </FormControl>
         </Grid>
 
-        <Grid item xs={3} sm={4}>
-          <TextField
-            label="Amount"
-            id="outlined-size-small"
-            placeholder="Amount"
-            size="small"
-            autoComplete="off"
-            value={enteredAmount}
-            onChange={(e) => {
-              setEnteredAmount(e.target.value);
-            }}
-          />
+        <Grid item>
+          <FormControl xs={12}>
+            <TextField
+              label="Amount"
+              id="outlined-size-small"
+              placeholder="Amount"
+              size="small"
+              autoComplete="off"
+              value={enteredAmount}
+              onChange={(e) => {
+                setEnteredAmount(e.target.value);
+              }}
+            />
+          </FormControl>
         </Grid>
-
-        <Grid item >
-          <FormControl xs={3} sm={4} >
+        <Grid item>
+          <FormControl xs={12} sm={6}>
             <InputLabel id="demo-simple-select-label">Place</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={enteredPlace}
+              size="small"
               label="Place"
               onChange={(e) => {
                 setEnteredPlace(e.target.value);
@@ -89,33 +93,37 @@ export default function AddItems(props) {
             >
               <MenuItem value={"basement"}>Basement</MenuItem>
               <MenuItem value={"pantry"}>Pantry</MenuItem>
-              <MenuItem value={"attic"}>Attic</MenuItem>
             </Select>
           </FormControl>
         </Grid>
 
         <Grid item>
-        <FormControl xs={3} sm={4}>
-          <InputLabel id="date"></InputLabel>
-          <TextField
-            id="date"
-            labelId="date"
-            label="Expiry Date"
-            type="date"
-            value={enteredDate}
-            onChange={(e) => {
-              setEnteredDate(e.target.value);
-            }}
-            defaultValue="2021-12-31"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
+          <FormControl xs={12} sm={6}>
+            <InputLabel id="date"></InputLabel>
+            <TextField
+              id="date"
+              labelId="date"
+              label="Expiry Date"
+              type="date"
+              value={enteredDate}
+              size="small"
+              onChange={(e) => {
+                setEnteredDate(e.target.value);
+              }}
+              defaultValue="2022-12-31"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              style={{
+                width: "25ch",
+                height: "44px",
+              }}
+            />
           </FormControl>
         </Grid>
 
-        <Grid item >
-          <FormControl xs={3} sm={4}>
+        <Grid item>
+          <FormControl xs={12} sm={6}>
             <InputLabel id="demo-simple-select-helper-label">
               Category
             </InputLabel>
