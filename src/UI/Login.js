@@ -96,25 +96,14 @@ const Login = ({ history }) => {
               LOGIN
             </Button>
           </Grid>
-          <Typography component="div">
             <Typography
               variant="h6"
               color="darkslateblue"
               component="h2"
               sx={{ mt: 3 }}
             >
-              To access this demo site
-              <Typography
-                variant="h6"
-                color="darkslateblue"
-                component="h6"
-                fontWeight="light"
-              >
-                Email: test@test.com <br />
-                Password: demo123
-              </Typography>
+              Welcome
             </Typography>
-          </Typography>
         </form>
       </Grid>
     </CssBaseline>
